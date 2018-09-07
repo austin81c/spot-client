@@ -41,7 +41,7 @@ app.use(function(req, res, next) {
     let query = req.query.name;
     let authHeader = req.headers.authentication;
 
-    let searchArtistRequest = searchArtistOptions;
+    let searchArtistRequest = {... searchArtistOptions};
 
     searchArtistRequest.url = searchArtistOptions.url + "?q=" + query + "&type=artist&limit=5";
     searchArtistRequest.headers.authorization = authHeader;
